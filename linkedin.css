@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}    
+.container {
+    display: grid;
+    grid-template:
+    "top top top top top" 50px
+    "w side mid end a" 650px /
+    1fr 1fr 2fr 1.2fr 1fr;
+    gap: 10px;
+}
+.top {
+    grid-area: top;
+    background-color: aqua;
+}
+.side {
+    grid-area: side;
+    display: grid;
+    grid-template-rows: 1fr 150px 1fr;
+    gap: 5px;
+}
+.side > div {
+    background-color: blueviolet;
+}
+.mid {
+    grid-area: mid;
+    display: grid;
+    grid-template-rows: 150px;
+    gap: 10px
+}
+.mtop {
+    background-color: rgb(166, 147, 147);
+}
+.end {
+    grid-area: end;
+    display: grid;
+    grid-template-rows: 1fr 150px 1fr;
+    gap: 5px;
+}
+.end > div {
+    background-color: rgb(213, 139, 139);
+}
+.mid > div {
+    border: 1px solid black;
+}
+.side > div {
+    border: 1px solid black;
+}
+.end > div {
+    border: 1px solid black;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template:
+        "top top top" 50px
+        "side mid end" 650px /
+        1fr 2fr 1.2fr;
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 300px) {
+    .container {
+        display: grid;
+        grid-template:
+        "top top" 50px
+        "side mid" 650px /
+        1fr 2fr;
+        gap: 10px;
+    }
+    .end {
+        display: none;
+    }
+}
+.mbottom {
+    display: grid;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    gap: 5px;
+}
+.info {
+    border: 0.5px solid black;
+    height: 400px;
+    background-color: rgb(73, 73, 215);
+}
